@@ -15,11 +15,12 @@ class CreateMangasTable extends Migration
     {
         Schema::create('mangas', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
             $table->string('title');
-            $table->int('chapters_total');
+            $table->integer('chapters');
+            $table->integer('volumes');
             $table->string('discription');
             $table->date('published');
+            $table->timestamps();
         });
     }
 
