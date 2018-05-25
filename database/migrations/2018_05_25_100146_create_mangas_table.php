@@ -19,7 +19,7 @@ class CreateMangasTable extends Migration
             $table->string('title');
             $table->int('chapters_total');
             $table->string('discription');
-            $table->date('published')
+            $table->date('published');
         });
     }
 
