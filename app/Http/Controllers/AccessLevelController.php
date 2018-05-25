@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\AccessLevels;
+use App\AccessLevel;
 use Illuminate\Http\Request;
 
-class AccessLevelsController extends Controller
+class AccessLevelController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class AccessLevelsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\AccessLevels  $accessLevels
+     * @param  \App\AccessLevel  $accessLevel
      * @return \Illuminate\Http\Response
      */
-    public function show(AccessLevels $accessLevels)
+    public function show(AccessLevel $accessLevel)
     {
         //
     }
@@ -52,10 +52,10 @@ class AccessLevelsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\AccessLevels  $accessLevels
+     * @param  \App\AccessLevel  $accessLevel
      * @return \Illuminate\Http\Response
      */
-    public function edit(AccessLevels $accessLevels)
+    public function edit(AccessLevel $accessLevel)
     {
         //
     }
@@ -64,10 +64,10 @@ class AccessLevelsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\AccessLevels  $accessLevels
+     * @param  \App\AccessLevel  $accessLevel
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, AccessLevels $accessLevels)
+    public function update(Request $request, AccessLevel $accessLevel)
     {
         //
     }
@@ -75,10 +75,10 @@ class AccessLevelsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\AccessLevels  $accessLevels
+     * @param  \App\AccessLevel  $accessLevel
      * @return \Illuminate\Http\Response
      */
-    public function destroy(AccessLevels $accessLevels)
+    public function destroy(AccessLevel $accessLevel)
     {
         //
     }
