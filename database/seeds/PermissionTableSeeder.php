@@ -2,7 +2,7 @@ f<?php
 
 use Illuminate\Database\Seeder;
 
-class PremissionTableSeeder extends Seeder
+class PermissionTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
