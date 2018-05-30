@@ -7,6 +7,13 @@ use Illuminate\Http\Request;
 
 class MangaController extends Controller
 {
+    function __contstruct()
+    {
+        $this->middleware('permission:manga-list');
+        $this->middleware('permission:manga-create', ['only' => ['create','store']]);
+        $this->middleware('permission:manga-edit', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:manga-delete', ['only' => ['destroy']]);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +21,9 @@ class MangaController extends Controller
      */
     public function index()
     {
-        //
+        $manga = Manga::latest()->paginate(5);
+        return view('manga.index',compact('manga'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -24,7 +33,7 @@ class MangaController extends Controller
      */
     public function create()
     {
-        //
+        return view('manga.create');
     }
 
     /**
@@ -35,7 +44,17 @@ class MangaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        request()->validate([
+            'name' => 'required',
+            'detail' => 'required',
+        ]);
+
+
+        Manga::create($request->all());
+
+
+        return redirect()->route('manga.index')
+                        ->with('success','Manga created successfully.');
     }
 
     /**
@@ -46,7 +65,7 @@ class MangaController extends Controller
      */
     public function show(Manga $manga)
     {
-        //
+        return view('manga.show',compact('manga'));
     }
 
     /**
@@ -57,7 +76,7 @@ class MangaController extends Controller
      */
     public function edit(Manga $manga)
     {
-        //
+        return view('manga.edit',compact('manga'));
     }
 
     /**
@@ -69,7 +88,17 @@ class MangaController extends Controller
      */
     public function update(Request $request, Manga $manga)
     {
-        //
+        request()->validate([
+            'name' => 'required',
+            'detail' => 'required',
+        ]);
+
+
+        $manga->update($request->all());
+
+
+        return redirect()->route('manga.index')
+                        ->with('success','Manga updated successfully');
     }
 
     /**
@@ -80,6 +109,10 @@ class MangaController extends Controller
      */
     public function destroy(Manga $manga)
     {
-        //
+        $manga->delete();
+
+
+        return redirect()->route('manga.index')
+                        ->with('success','Manga deleted successfully');
     }
 }
