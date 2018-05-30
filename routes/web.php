@@ -11,6 +11,9 @@
 |
 */
 
+Route::resource('anime', 'AnimeController');
+
 Route::get('/', function () {
     return view('welcome');
 });
+
