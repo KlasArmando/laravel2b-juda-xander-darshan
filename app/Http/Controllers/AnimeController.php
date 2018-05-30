@@ -14,7 +14,9 @@ class AnimeController extends Controller
      */
     public function index()
     {
-        //
+        $result = Anime::all();
+
+        return view('anime.anime&manga', compact('result'));
     }
 
     /**
