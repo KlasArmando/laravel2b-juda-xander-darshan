@@ -15,7 +15,8 @@ class AnimeTableSeeder extends Seeder
             'title' => 'Bleach',
             'episodes_Total' => 366 ,
             'description' => 'koala',
-            'aired' => '2001/05/12'
+            'aired' => '2001/05/12',
+            'imgPath' => '/images/Bleach.png'
 
             ]);
 

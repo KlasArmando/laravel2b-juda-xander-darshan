@@ -46,8 +46,7 @@
         @endforeach
 </table>
 
-<img id="Bleach" src="{{asset('/images/Bleach.png')}}" alt="Bleach" style="width:250px;height:375px">
-
+<img id="Bleach" src="{{asset($anime->imgPath)}}" alt="Bleach" style="width:250px;height:375px">
 
 </body>
 </html>
