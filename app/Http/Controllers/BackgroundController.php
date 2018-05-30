@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\AccessLevel;
+use App\Background;
 use Illuminate\Http\Request;
 
-class AccessLevelController extends Controller
+class BackgroundController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class AccessLevelController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\AccessLevel  $accessLevel
+     * @param  \App\Background  $background
      * @return \Illuminate\Http\Response
      */
-    public function show(AccessLevel $accessLevel)
+    public function show(Background $background)
     {
         //
     }
@@ -52,10 +52,10 @@ class AccessLevelController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\AccessLevel  $accessLevel
+     * @param  \App\Background  $background
      * @return \Illuminate\Http\Response
      */
-    public function edit(AccessLevel $accessLevel)
+    public function edit(Background $background)
     {
         //
     }
@@ -64,10 +64,10 @@ class AccessLevelController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\AccessLevel  $accessLevel
+     * @param  \App\Background  $background
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, AccessLevel $accessLevel)
+    public function update(Request $request, Background $background)
     {
         //
     }
@@ -75,10 +75,10 @@ class AccessLevelController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\AccessLevel  $accessLevel
+     * @param  \App\Background  $background
      * @return \Illuminate\Http\Response
      */
-    public function destroy(AccessLevel $accessLevel)
+    public function destroy(Background $background)
     {
         //
     }
