@@ -15,13 +15,20 @@ class PermissionTableSeeder extends Seeder
         $permissions =
         [
             'role-list',
+            'role-show',
             'role-create',
             'role-edit',
             'role-delete',
             'manga-list',
+            'manga-show',
             'manga-create',
             'manga-edit',
-            'manga-delete'
+            'manga-delete',
+            'user-list',
+            'user-show',
+            'user-create',
+            'user-edit',
+            'user-delete'
         ];
 
         foreach($permissions as $permission)

@@ -21,7 +21,14 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('admin-panel/users', 'UserController@index')->name('admin-user');
+//Admin-panel users
+Route::get('/admin-panel/users', 'UserController@index')->name('user.index');
+Route::get('/admin-panel/users/create', 'UserController@create')->name('user.create');
+Route::post('/admin-panel/users', 'UserController@store')->name('user.store');
+Route::get('/admin-panel/users/{user}', 'UserController@show')->name('user.show');
+Route::get('/admin-panel/users/{user}/edit', 'UserController@edit')->name('user.edit');
+Route::patch('/admin-panel/users/{user}', 'UserController@update')->name('user.update');
+Route::delete('/admin-panel/users/{user}', 'UserController@delete')->name('user.delete');
 
 Route::group(['middleware' => ['auth']], function()
 {
