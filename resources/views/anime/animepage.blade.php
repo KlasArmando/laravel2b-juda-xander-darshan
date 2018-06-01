@@ -29,7 +29,7 @@
     @foreach($result as $anime)
         <tr>
             <td><p>{{$anime->title}}</p></td>
-            <td><p>{{$anime->episodes_Total}}</p></td>
+            <td><p>{{$anime->episodes}}</p></td>
             <td><p>{{$anime->aired}}</p></td>
         </tr>
     @endforeach
