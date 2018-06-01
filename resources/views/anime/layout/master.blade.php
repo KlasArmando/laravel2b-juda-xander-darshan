@@ -17,17 +17,17 @@
 
     #Logo{
         position: relative;
-        bottom: 570px;
+        bottom: 800px;
         right: 250px;
     }
 
     body{
-        background-color: ghostwhite;
+        background-color: #99ffcc;
     }
 
     #navbar{
         position: relative;
-        bottom: 550px;
+        bottom: 800px;
     }
 
     #navbar ul {

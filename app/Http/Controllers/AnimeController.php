@@ -16,7 +16,7 @@ class AnimeController extends Controller
     {
         $result = Anime::all();
 
-        return view('anime.anime&manga', compact('result'));
+        return view('anime.animepage', compact('result'));
     }
 
     /**
