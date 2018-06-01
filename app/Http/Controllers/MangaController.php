@@ -45,8 +45,11 @@ class MangaController extends Controller
     public function store(Request $request)
     {
         request()->validate([
-            'name' => 'required',
-            'detail' => 'required',
+            'title' => 'required',
+            'volumes' => 'required',
+            'chapters' => 'required',
+            'description' => 'required',
+            'published' => 'required',
         ]);
 
 
@@ -89,8 +92,11 @@ class MangaController extends Controller
     public function update(Request $request, Manga $manga)
     {
         request()->validate([
-            'name' => 'required',
-            'detail' => 'required',
+            'title' => 'required',
+            'volumes' => 'required',
+            'chapters' => 'required',
+            'description' => 'required',
+            'published' => 'required',
         ]);
 
 

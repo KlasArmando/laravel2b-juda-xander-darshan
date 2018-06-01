@@ -8,6 +8,6 @@ class Manga extends Model
 {
     protected $fillable =
 	[
-		'name', 'detail'
+		'title', 'chapters', 'volumes', 'description', 'published'
 	];
 }
