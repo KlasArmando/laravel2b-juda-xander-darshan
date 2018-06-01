@@ -1,4 +1,4 @@
-@extends('anime.layout.navbar')
+@extends('anime.layout.master')
 <!doctype html>
 <html lang="en">
 <head>
@@ -28,9 +28,9 @@
     </tr>
     @foreach($result as $anime)
         <tr>
-            <td><p "anime/{{$anime->id}}">{{$anime->title}}</p></td>
-            <td><p "anime/{{$anime->id}}">{{$anime->episodes_Total}}</p></td>
-            <td><p "anime/{{$anime->id}}">{{$anime->aired}}</p></td>
+            <td><p>{{$anime->title}}</p></td>
+            <td><p>{{$anime->episodes_Total}}</p></td>
+            <td><p>{{$anime->aired}}</p></td>
         </tr>
     @endforeach
 </table>
@@ -41,7 +41,7 @@
     </tr>
     @foreach($result as $anime)
         <tr>
-            <td><p 'anime/{{$anime->id}}>{{$anime->description}}</p></td>
+            <td><p>{{$anime->description}}</p></td>
         </tr>
         @endforeach
 </table>
