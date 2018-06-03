@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Anime;
+use App\Permission;
 use Illuminate\Http\Request;
 
-class AnimeController extends Controller
+class PermissionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,7 @@ class AnimeController extends Controller
      */
     public function index()
     {
-        $result = Anime::all();
-
-        return view('anime.animepage', compact('result'));
+        //
     }
 
     /**
@@ -43,10 +41,10 @@ class AnimeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Anime  $anime
+     * @param  \App\Permission  $permission
      * @return \Illuminate\Http\Response
      */
-    public function show(Anime $anime)
+    public function show(Permission $permission)
     {
         //
     }
@@ -54,10 +52,10 @@ class AnimeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Anime  $anime
+     * @param  \App\Permission  $permission
      * @return \Illuminate\Http\Response
      */
-    public function edit(Anime $anime)
+    public function edit(Permission $permission)
     {
         //
     }
@@ -66,10 +64,10 @@ class AnimeController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Anime  $anime
+     * @param  \App\Permission  $permission
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Anime $anime)
+    public function update(Request $request, Permission $permission)
     {
         //
     }
@@ -77,10 +75,10 @@ class AnimeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Anime  $anime
+     * @param  \App\Permission  $permission
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Anime $anime)
+    public function destroy(Permission $permission)
     {
         //
     }

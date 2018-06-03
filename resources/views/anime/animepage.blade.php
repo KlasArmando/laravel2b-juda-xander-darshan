@@ -1,4 +1,4 @@
-@extends('anime.layout.navbar')
+@extends('anime.layout.master')
 <!doctype html>
 <html lang="en">
 <head>
@@ -6,8 +6,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-
+        <title>OurAnimeList</title>
 </head>
 <body>
 
@@ -28,9 +27,9 @@
     </tr>
     @foreach($result as $anime)
         <tr>
-            <td><a href="anime/{{$anime->id}}">{{$anime->title}}</a></td>
-            <td><a href="anime/{{$anime->id}}">{{$anime->episodes_Total}}</a></td>
-            <td><a href="anime/{{$anime->id}}">{{$anime->aired}}</a></td>
+            <td><p>{{$anime->title}}</p></td>
+            <td><p>{{$anime->episodes}}</p></td>
+            <td><p>{{$anime->aired}}</p></td>
         </tr>
     @endforeach
 </table>
@@ -41,7 +40,7 @@
     </tr>
     @foreach($result as $anime)
         <tr>
-            <td><a href="anime/{{$anime->id}}">{{$anime->description}}</a></td>
+            <td><p>{{$anime->description}}</p></td>
         </tr>
         @endforeach
 </table>
@@ -55,7 +54,7 @@
 <style>
     #Bleach{
         position: relative;
-        bottom: 100px;
+        bottom: 350px;
     }
 
     #description{
@@ -63,20 +62,25 @@
         top: 200px;
         left: 285px;
         width: 50%;
+        text-decoration-color: black;
     }
 
     #description td{
         position: relative;
-        height: 200px;
+        height: 400px;
+        text-align: center;
+        vertical-align: top;
+        text-decoration-color: black;
+        list-style-type: none;
     }
 
     #info {
         margin: 0px auto;
         position: relative;
-        top: 185px;
-        right: 200px;
+        top: 166px;
+        right: 207px;
         border-collapse: collapse;
-        width: 30%;
+        width: 400px;
 
     }
 
@@ -85,9 +89,6 @@
         text-align: left;
     }
 
-    #info a{
-        color: black;
-    }
 
 </style>
 

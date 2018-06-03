@@ -18,7 +18,7 @@ class CreateMangasTable extends Migration
             $table->string('title');
             $table->integer('chapters');
             $table->integer('volumes');
-            $table->string('discription');
+            $table->string('description');
             $table->date('published');
             $table->timestamps();
         });

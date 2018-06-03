@@ -16,8 +16,8 @@ class CreateAnimesTable extends Migration
         Schema::create('animes', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->integer('episodes_Total');
-            $table->string('description');
+            $table->integer('episodes');
+            $table->longText('description');
             $table->date('aired');
             $table->string('imgPath');
             $table->timestamps();
