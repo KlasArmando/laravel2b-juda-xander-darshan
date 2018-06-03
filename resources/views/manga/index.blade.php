@@ -8,9 +8,9 @@
                 <h2>Products</h2>
             </div>
             <div class="pull-right">
-                <!--@can('manga-create')-->
-                <a class="btn btn-success" href="{{ route('manga.create') }}"> Create New Manga</a>
-                <!--@endcan-->
+                @can('manga-create')
+                    <a class="btn btn-success" href="{{ route('manga.create') }}"> Create New Manga</a>
+                @endcan
             </div>
         </div>
     </div>
@@ -38,16 +38,16 @@
 	        <td>
                 <form action="{{ route('manga.destroy', $m->id) }}" method="POST">
                     <a class="btn btn-info" href="{{ route('manga.show',$m->id) }}">Show</a>
-                    <!--@can('manga-edit')-->
-                    <a class="btn btn-primary" href="{{ route('manga.edit',$m->id) }}">Edit</a>
-                    <!--@endcan-->
 
+                    @can('manga-edit')
+                        <a class="btn btn-primary" href="{{ route('manga.edit',$m->id) }}">Edit</a>
+                    @endcan
 
-                    @csrf
-                    @method('DELETE')
-                    <!--@can('manga-delete')-->
-                    <button type="submit" class="btn btn-danger">Delete</button>
-                    <!--@endcan-->
+                    @can('manga-delete')
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    @endcan
                 </form>
 	        </td>
 	    </tr>
