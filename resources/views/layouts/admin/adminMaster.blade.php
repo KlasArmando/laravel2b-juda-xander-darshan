@@ -32,11 +32,74 @@
             clear: both;
         }
 
+        .error {
+            margin: 5px;
+            padding: 3px 10px;
+            border-radius: 5px;
+            background: lightcoral;
+            color: white;
+        }
+
         @media screen and (max-width: 600px) {
             .column.side, .column.middle {
                 width: 100%;
             }
         }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even){background-color: #f2f2f2}
+
+        input[type=submit] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .go-right {
+            float: right;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            background-color: #f1f1f1;
+        }
+
+        li a {
+            display: block;
+            color: #000;
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+
+        li a.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        li a:hover:not(.active) {
+            background-color: #555;
+            color: white;
+        }
+
     </style>
 </head>
 <body>
@@ -45,6 +108,17 @@
             @include('layouts.admin.adminNavbar')
         </div>
         <div class="column middle">
+            @if ($errors->any())
+                <div class="error">
+                    <h4>Error:</h4>
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
             @yield('content')
         </div>
     </div>

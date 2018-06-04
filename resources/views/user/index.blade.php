@@ -2,18 +2,18 @@
 @section('content')
     @can('user-create')
         <form action="{{route('user.create')}}">
-            <input type="submit" value="Create">
+            <input type="submit" value="Create" class="go-right">
         </form>
     @endcan
     <table>
         <tr>
-            <td>Username</td>
-            <td>Email</td>
+            <td><strong>Username</strong></td>
+            <td><strong>Email</strong></td>
             @can('user-edit')
-                <td>Edit</td>
+                <td><strong>Edit</strong></td>
             @endcan
             @can('user-delete')
-                <td>Delete</td>
+                <td><strong>Delete</strong></td>
             @endcan
         </tr>
         @foreach($users as $user)
