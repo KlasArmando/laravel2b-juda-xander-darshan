@@ -51,9 +51,11 @@
                                 </a>
 
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    @can('user-list')
                                     <a class="dropdown-item" href="{{ route('user.index') }}">
                                         Admin-Panel
                                     </a>
+                                    @endcan
 
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
