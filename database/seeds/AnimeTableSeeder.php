@@ -20,6 +20,5 @@ Bleach follows the adventures of Ichigo Kurosaki after he obtains the powers of 
             'aired' => '2001/05/12',
             'imgPath' => '/images/Bleach.png'
         ]);
-
     }
 }
