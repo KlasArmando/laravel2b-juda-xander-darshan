@@ -6,7 +6,8 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>OurAnimeList</title>
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
+    <title>OurAnimeList</title>
 </head>
 <body>
 
@@ -18,6 +19,8 @@
 @section('navbar')
     @parent
 @endsection
+
+
 
 <table id="info" border="1">
     <tr>
@@ -45,7 +48,21 @@
         @endforeach
 </table>
 
+
+<table id="sidepanel" border="1">
+    <tr>
+        <th>
+            <p>Suggested</p>
+        </th>
+    </tr>
+    <tr>
+            <td>koala</td>
+    </tr>
+</table>
+
 <img id="Bleach" src="{{asset($anime->imgPath)}}" alt="Bleach" style="width:250px;height:375px">
+
+
 
 </body>
 </html>
@@ -62,7 +79,19 @@
         top: 200px;
         left: 285px;
         width: 50%;
-        text-decoration-color: black;
+    }
+
+    #sidepanel{
+        position: absolute;
+        left: 1100px;
+        width: 400px;
+        bottom: 25px;
+        border-collapse: collapse;
+        border: solid;
+    }
+
+    #sidepanel td{
+        height: 500px;
     }
 
     #description td{

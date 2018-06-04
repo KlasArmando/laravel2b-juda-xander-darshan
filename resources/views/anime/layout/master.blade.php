@@ -1,7 +1,3 @@
-@section('Favicon')
-<link rel="shortcut icon" type="image/png" href="../../../../public/images/Favicon.png">
-@show
-
 @section('logo')
 <img id="Logo" src="{{asset('/images/Logo.png')}}" alt="Communism" style="width:400px;height:90px">
 
