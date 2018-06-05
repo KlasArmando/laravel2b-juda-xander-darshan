@@ -21,7 +21,7 @@ class MangaController extends Controller
      */
     public function index()
     {
-        $manga = Manga::latest()->paginate(5);
+        $manga = Manga::where('is_archived',0)->latest()->paginate(5);
         return view('manga.index',compact('manga'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
@@ -120,5 +120,12 @@ class MangaController extends Controller
 
         return redirect()->route('manga.index')
                         ->with('success','Manga deleted successfully');
+    }
+
+    public function archivedIndex()
+    {
+        $manga = Manga::where('is_archived',1)->latest()->paginate(5);
+        return view('manga.archived',compact('manga'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 }

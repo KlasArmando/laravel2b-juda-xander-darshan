@@ -23,6 +23,8 @@ class PermissionTableSeeder extends Seeder
             'manga-show',
             'manga-create',
             'manga-edit',
+            'manga-archive',
+            'manga-reuse',
             'manga-delete',
             'user-list',
             'user-show',

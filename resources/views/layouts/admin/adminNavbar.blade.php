@@ -8,4 +8,7 @@
      <li>
          <a href="#">📄 - Roles</a>
      </li>
+     <li>
+         <a href="{{route('manga.archivedIndex')}}">📄 - Archived Manga</a>
+     </li>
  </ul>
