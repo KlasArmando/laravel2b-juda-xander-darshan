@@ -30,6 +30,11 @@ class UserController extends Controller
     }
 
     public function store(){
+        $validatedData = request()->validate([
+            'name' => 'required|unique:users',
+            'email' => 'required|unique:users',
+        ]);
+
         $user = new User;
         $user->name = request('name');
         $user->email = request('email');
@@ -57,6 +62,11 @@ class UserController extends Controller
     }
 
     public function update(User $user){
+        $validatedData = request()->validate([
+            'name' => 'required|unique:users,name,'.$user->id,
+            'email' => 'required|unique:users,email,'.$user->id,
+        ]);
+
         $user->name = request('name');
         $user->email = request('email');
         $user->password = Hash::make(request('password'));

@@ -29,6 +29,7 @@ Route::get('/admin-panel/users/{user}', 'UserController@show')->name('user.show'
 Route::get('/admin-panel/users/{user}/edit', 'UserController@edit')->name('user.edit');
 Route::patch('/admin-panel/users/{user}', 'UserController@update')->name('user.update');
 Route::delete('/admin-panel/users/{user}', 'UserController@delete')->name('user.delete');
+Route::get('/admin-panel/mangas', 'MangaController@archivedIndex')->name('manga.archivedIndex');
 
 Route::group(['middleware' => ['auth']], function()
 {
