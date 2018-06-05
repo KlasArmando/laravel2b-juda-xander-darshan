@@ -45,7 +45,7 @@ class MangaController extends Controller
     public function store(Request $request)
     {
         $validatedData = request()->validate([
-            'title' => 'required|unique:mangas,title',
+            'title' => 'required|unique:mangas',
             'volumes' => 'required',
             'chapters' => 'required',
             'description' => 'required',
@@ -92,7 +92,7 @@ class MangaController extends Controller
     public function update(Request $request, Manga $manga)
     {
         $validatedData = request()->validate([
-            'title' => 'required|unique:mangas,title,',
+            'title' => 'required|unique:mangas,title,'.$manga->id,
             'volumes' => 'required',
             'chapters' => 'required',
             'description' => 'required',
