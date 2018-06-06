@@ -56,7 +56,7 @@
         </th>
     </tr>
     <tr>
-            <td>koala</td>
+            <td><img src="{{asset('../public/images/UBW.jpg')}}"></td>
     </tr>
 </table>
 

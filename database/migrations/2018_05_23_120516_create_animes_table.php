@@ -19,7 +19,6 @@ class CreateAnimesTable extends Migration
             $table->integer('episodes');
             $table->longText('description');
             $table->date('aired');
-            $table->string('imgPath');
             $table->timestamps();
         });
     }

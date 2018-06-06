@@ -6,5 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Anime extends Model
 {
-    //
+    protected $fillable =
+        [
+            'title', 'episodes', 'description', 'aired'
+        ];
 }
