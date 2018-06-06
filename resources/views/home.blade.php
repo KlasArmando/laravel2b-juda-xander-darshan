@@ -16,8 +16,13 @@
 
                     You are logged in!
                 </div>
+                <div class="card-header">Welcome</div>
+                <div class="card-body">
+                    OurAnimeList
+                </div>
             </div>
         </div>
     </div>
 </div>
+
 @endsection
