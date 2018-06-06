@@ -9,6 +9,7 @@
         <tr>
             <td><strong>Username</strong></td>
             <td><strong>Email</strong></td>
+            <td><strong>Roles</strong></td>
             @can('user-edit')
                 <td><strong>Edit</strong></td>
             @endcan
@@ -20,6 +21,11 @@
             <tr>
                 <td>{{$user->name}}</td>
                 <td>{{$user->email}}</td>
+                <td>
+                    @foreach ($user->roles()->pluck('name') as $role)
+                        <span class="role">{{$role}}</span>
+                    @endforeach
+                </td>
                 @can('user-edit')
                     <td>
                         <form action="{{route('user.edit', $user->id)}}">

@@ -100,6 +100,14 @@
             color: white;
         }
 
+        .role {
+            border: 1px solid black;
+            background: lightgreen;
+            border-radius: 5px;
+            padding: 3px;
+            margin-right: 2px;
+        }
+
     </style>
 </head>
 <body>

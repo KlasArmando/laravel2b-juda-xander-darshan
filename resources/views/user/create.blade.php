@@ -13,6 +13,11 @@
         <label for="password">Password:</label>
         <input name="password" id="password" type="password"><br>
 
-        <input type="submit" value="Send">
+        <label for="roles">Roles:</label><br>
+        @foreach($roles as $role)
+            <input name="roles[]" id="roles{{$role->id}}" type="checkbox" value="{{$role->id}}">{{$role->name}}<br>
+        @endforeach
+
+        <br><input type="submit" value="Send">
     </form>
 @endsection
