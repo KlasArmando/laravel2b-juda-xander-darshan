@@ -1,4 +1,4 @@
- <ul>
+ <ul class="nav">
      <li>
          <a href="{{route('home')}}">↩ - Home</a>
      </li>
