@@ -35,6 +35,7 @@ class UserController extends Controller
         $validatedData = request()->validate([
             'name' => 'required|unique:users',
             'email' => 'required|unique:users',
+            'password' => 'required',
         ]);
 
         $user = new User;
@@ -70,6 +71,7 @@ class UserController extends Controller
         $validatedData = request()->validate([
             'name' => 'required|unique:users,name,'.$user->id,
             'email' => 'required|unique:users,email,'.$user->id,
+            'password' => 'required',
         ]);
 
         $user->name = request('name');
