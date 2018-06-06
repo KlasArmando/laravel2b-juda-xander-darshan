@@ -6,6 +6,7 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
 {
@@ -23,7 +24,8 @@ class UserController extends Controller
     public function create() {
         $user2 = Auth::user();
         if ($user2->hasPermissionTo('user-create')){
-            return view('user.create');
+            $roles = Role::all();
+            return view('user.create',compact('roles'));
         }else{
             abort(404);
         }
@@ -40,6 +42,8 @@ class UserController extends Controller
         $user->email = request('email');
         $user->password = Hash::make(request('password'));
         $user->save();
+        $roles = request('roles') ? request('roles') : [];
+        $user->assignRole($roles);
         return redirect('users');
     }
 
@@ -55,7 +59,8 @@ class UserController extends Controller
     public function edit(User $user){
         $user2 = Auth::user();
         if ($user2->hasPermissionTo('user-edit')){
-            return view('user.edit', compact('user'));
+            $roles = Role::all();
+            return view('user.edit', compact('user', 'roles'));
         }else{
             abort(404);
         }
@@ -71,6 +76,8 @@ class UserController extends Controller
         $user->email = request('email');
         $user->password = Hash::make(request('password'));
         $user->save();
+        $roles = request('roles') ? request('roles') : [];
+        $user->syncRoles($roles);
         return redirect('users');
     }
 
