@@ -7,6 +7,13 @@ use Illuminate\Http\Request;
 
 class AnimeController extends Controller
 {
+    function __contstruct()
+    {
+        $this->middleware('permission:anime-list');
+        $this->middleware('permission:anime-create', ['only' => ['create','store']]);
+        $this->middleware('permission:anime-edit', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:anime-delete', ['only' => ['destroy']]);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,10 +21,9 @@ class AnimeController extends Controller
      */
     public function index()
     {
-        $result = Anime::all();
-
-
-        return view('anime.animepage',compact('result'));
+        $anime = Anime::latest()->paginate(5);
+        return view('anime.index',compact('anime'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -27,7 +33,7 @@ class AnimeController extends Controller
      */
     public function create()
     {
-        //
+        return view('anime.create');
     }
 
     /**
@@ -38,7 +44,19 @@ class AnimeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        request()->validate([
+            'title' => 'required',
+            'episodes' => 'required',
+            'description' => 'required',
+            'aired' => 'required',
+        ]);
+
+
+        anime::create($request->all());
+
+
+        return redirect()->route('anime.index')
+            ->with('success','anime created successfully.');
     }
 
     /**
@@ -49,7 +67,7 @@ class AnimeController extends Controller
      */
     public function show(Anime $anime)
     {
-        //
+        return view('anime.show',compact('anime'));
     }
 
     /**
@@ -60,7 +78,7 @@ class AnimeController extends Controller
      */
     public function edit(Anime $anime)
     {
-        //
+        return view('anime.edit',compact('anime'));
     }
 
     /**
@@ -72,7 +90,19 @@ class AnimeController extends Controller
      */
     public function update(Request $request, Anime $anime)
     {
-        //
+        request()->validate([
+            'title' => 'required',
+            'episodes' => 'required',
+            'description' => 'required',
+            'aired' => 'required',
+        ]);
+
+
+        $anime->update($request->all());
+
+
+        return redirect()->route('anime.index')
+            ->with('success','anime updated successfully');
     }
 
     /**
@@ -83,6 +113,10 @@ class AnimeController extends Controller
      */
     public function destroy(Anime $anime)
     {
-        //
+        $anime->delete();
+
+
+        return redirect()->route('anime.index')
+            ->with('success','Anime deleted successfully');
     }
 }
