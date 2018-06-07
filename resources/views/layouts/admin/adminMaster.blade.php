@@ -40,6 +40,14 @@
             color: white;
         }
 
+        .success {
+            margin: 5px;
+            padding: 3px 10px;
+            border-radius: 5px;
+            background: lightgreen;
+            color: white;
+        }
+
         @media screen and (max-width: 600px) {
             .column.side, .column.middle {
                 width: 100%;
@@ -124,6 +132,11 @@
                             <li>{{ $error }}</li>
                         @endforeach
                     </ul>
+                </div>
+            @endif
+            @if ($message = Session::get('success'))
+                <div class="success">
+                    <p>{{ $message }}</p>
                 </div>
             @endif
 
