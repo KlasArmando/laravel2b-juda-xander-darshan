@@ -16,7 +16,11 @@
 
          <label for="roles">Roles:</label><br>
          @foreach($roles as $role)
-             <input name="roles[]" id="roles{{$role->id}}" type="checkbox" value="{{$role->id}}">{{$role->name}}<br>
+             @if($user->hasRole($role->name))
+                <input name="roles[]" id="roles{{$role->id}}" type="checkbox" value="{{$role->id}}" checked>{{$role->name}}<br>
+             @else
+                 <input name="roles[]" id="roles{{$role->id}}" type="checkbox" value="{{$role->id}}">{{$role->name}}<br>
+             @endif
          @endforeach
 
          <br><input type="submit" value="Send">

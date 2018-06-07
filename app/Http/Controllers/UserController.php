@@ -35,6 +35,7 @@ class UserController extends Controller
         $validatedData = request()->validate([
             'name' => 'required|unique:users',
             'email' => 'required|unique:users',
+            'password' => 'required',
         ]);
 
         $user = new User;
@@ -44,7 +45,8 @@ class UserController extends Controller
         $user->save();
         $roles = request('roles') ? request('roles') : [];
         $user->assignRole($roles);
-        return redirect('users');
+        return redirect('users')
+            ->with('success','User created successfully');
     }
 
     public function show(User $user){
@@ -70,6 +72,7 @@ class UserController extends Controller
         $validatedData = request()->validate([
             'name' => 'required|unique:users,name,'.$user->id,
             'email' => 'required|unique:users,email,'.$user->id,
+            'password' => 'required',
         ]);
 
         $user->name = request('name');
@@ -78,11 +81,12 @@ class UserController extends Controller
         $user->save();
         $roles = request('roles') ? request('roles') : [];
         $user->syncRoles($roles);
-        return redirect('users');
+        return redirect('users')
+            ->with('success','User updated successfully');
     }
 
     public function delete(User $user){
         $user->delete();
-        return redirect('users');
+        return redirect('users')->with('success','User deleted successfully');
     }
 }
