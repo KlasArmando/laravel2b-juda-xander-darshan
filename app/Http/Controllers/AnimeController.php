@@ -62,7 +62,7 @@ class AnimeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Manga  $manga
+     * @param  \App\Anime  $anime
      * @return \Illuminate\Http\Response
      */
     public function show(Anime $anime)
@@ -73,7 +73,7 @@ class AnimeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Manga  $manga
+     * @param  \App\Anime  $anime
      * @return \Illuminate\Http\Response
      */
     public function edit(Anime $anime)
@@ -85,7 +85,7 @@ class AnimeController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Manga  $manga
+     * @param  \App\Anime  $anime
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Anime $anime)
@@ -108,7 +108,7 @@ class AnimeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Manga  $manga
+     * @param  \App\Anime  $anime
      * @return \Illuminate\Http\Response
      */
     public function destroy(Anime $anime)

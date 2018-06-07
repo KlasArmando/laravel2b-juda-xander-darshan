@@ -52,7 +52,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Aired:</strong>
-                    <input type="date" name="published" id='aired' class="form-control" placeholder="aired">
+                    <input type="date" name="aired" id='aired' class="form-control" placeholder="aired">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
