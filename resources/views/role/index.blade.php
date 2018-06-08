@@ -30,7 +30,7 @@
                 @endcan
                 @can('role-delete')
                     <td>
-                        <form action="{{route('role.delete', $role->id)}}" method="post">
+                        <form action="{{route('role.delete', $role->id)}}" method="post" onsubmit="return confirmDelete()">
                             {{ method_field('DELETE') }}{{ csrf_field() }}
                             <input type="submit" value="Delete">
                         </form>
