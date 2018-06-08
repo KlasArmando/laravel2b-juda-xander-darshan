@@ -32,7 +32,7 @@
                 @endcan
                 @can('manga-delete')
                     <td>
-                        <form action="{{route('manga.destroy', $m->id)}}" method="post">
+                        <form action="{{route('manga.destroy', $m->id)}}" method="post" onsubmit="return confirmDelete()">
                             {{ method_field('DELETE') }}
                             {{ csrf_field() }}
                             <input type="submit" value="Delete">
