@@ -36,17 +36,15 @@
 	        <td>{{ $m->title }}</td>
 	        <td>{{ $m->description }}</td>
 	        <td>
-                <form action="{{ route('manga.destroy', $m->id) }}" method="POST">
+                <form action="#">
                     <a class="btn btn-info" href="{{ route('manga.show',$m->id) }}">Show</a>
 
                     @can('manga-edit')
                         <a class="btn btn-primary" href="{{ route('manga.edit',$m->id) }}">Edit</a>
                     @endcan
 
-                    @can('manga-delete')
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-danger">Delete</button>
+                    @can('manga-archive')
+                        <button type="submit" class="btn btn-danger">Archive</button>
                     @endcan
                 </form>
 	        </td>
