@@ -35,7 +35,7 @@
                 @endcan
                 @can('user-delete')
                     <td>
-                        <form action="{{route('user.delete', $user->id)}}" method="post">
+                        <form action="{{route('user.delete', $user->id)}}" method="post" onsubmit="return confirmDelete()">
                             {{ method_field('DELETE') }}
                             {{ csrf_field() }}
                             <input type="submit" value="Delete">
