@@ -36,7 +36,9 @@
 	        <td>{{ $m->title }}</td>
 	        <td>{{ $m->description }}</td>
 	        <td>
-                <form action="#">
+                <form action="manga/archive/{{$m->id}}" method="post">
+                    @csrf
+                    {{ method_field('PATCH') }}
                     <a class="btn btn-info" href="{{ route('manga.show',$m->id) }}">Show</a>
 
                     @can('manga-edit')
