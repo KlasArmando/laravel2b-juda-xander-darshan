@@ -36,17 +36,17 @@
                 <td>{{ $a->title }}</td>
                 <td>{{ $a->description }}</td>
                 <td>
-                    <form action="{{ route('anime.destroy', $a->id) }}" method="POST">
+                    <form action="anime/archive/{{$a->id}}" method="post">
+                        @csrf
+                        {{ method_field('PATCH') }}
                         <a class="btn btn-info" href="{{ route('anime.show',$a->id) }}">Show</a>
 
                         @can('anime-edit')
                             <a class="btn btn-primary" href="{{ route('anime.edit',$a->id) }}">Edit</a>
                         @endcan
 
-                        @can('anime-delete')
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger">Delete</button>
+                        @can('anime-archive')
+                            <button type="submit" class="btn btn-danger">Archive</button>
                         @endcan
                     </form>
                 </td>

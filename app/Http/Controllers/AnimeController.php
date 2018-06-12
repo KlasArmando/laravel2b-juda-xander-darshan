@@ -116,7 +116,22 @@ class AnimeController extends Controller
         $anime->delete();
 
 
-        return redirect()->route('anime.index')
+        return redirect()->route('anime.archived')
             ->with('success','Anime deleted successfully');
+    }
+
+    public function archive(Anime $anime)
+    {
+        $anime->is_archived = 1;
+        $anime->save();
+        return redirect()->route('anime.index')
+            ->with('success','Anime archived successfully');
+    }
+
+    public function archivedIndex()
+    {
+        $anime = Anime::where('is_archived',1)->latest()->paginate(5);
+        return view('anime.archived',compact('anime'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 }
