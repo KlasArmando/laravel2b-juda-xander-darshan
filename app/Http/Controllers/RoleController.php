@@ -130,6 +130,8 @@ class RoleController extends Controller
         $role->save();
         if (!empty(request('permissions'))){
             $role->syncPermissions(request('permissions'));
+        }else{
+            $role->syncPermissions();
         }
 
         return redirect()->route('role.index')
