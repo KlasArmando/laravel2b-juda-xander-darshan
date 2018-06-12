@@ -122,6 +122,14 @@ class MangaController extends Controller
                         ->with('success','Manga deleted successfully');
     }
 
+    public function archive(Manga $manga)
+    {
+        $manga->is_archived = 1;
+        $manga->save();
+        return redirect()->route('manga.index')
+                         ->with('success','Manga archived successfully');
+    }
+
     public function archivedIndex()
     {
         $manga = Manga::where('is_archived',1)->latest()->paginate(5);

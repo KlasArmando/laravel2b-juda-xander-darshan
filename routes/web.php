@@ -29,7 +29,6 @@ Route::get('/admin-panel/users/{user}', 'UserController@show')->name('user.show'
 Route::get('/admin-panel/users/{user}/edit', 'UserController@edit')->name('user.edit');
 Route::patch('/admin-panel/users/{user}', 'UserController@update')->name('user.update');
 Route::delete('/admin-panel/users/{user}', 'UserController@delete')->name('user.delete');
-Route::get('/admin-panel/mangas', 'MangaController@archivedIndex')->name('manga.archivedIndex');
 Route::get('/admin-panel/roles', 'RoleController@index')->name('role.index');
 Route::get('/admin-panel/roles/create', 'RoleController@create')->name('role.create');
 Route::post('/admin-panel/roles', 'RoleController@store')->name('role.store');
@@ -37,6 +36,8 @@ Route::get('/admin-panel/roles/{role}', 'RoleController@show')->name('role.show'
 Route::get('/admin-panel/roles/{role}/edit', 'RoleController@edit')->name('role.edit');
 Route::patch('/admin-panel/roles/{role}', 'RoleController@update')->name('role.update');
 Route::delete('/admin-panel/roles/{role}', 'RoleController@destroy')->name('role.delete');
+Route::get('/manga/index', 'MangaController@archivedIndex')->name('manga.archivedIndex');
+Route::patch('/manga/archive/{manga}', 'MangaController@archive')->name('manga.archived');
 
 Route::group(['middleware' => ['auth']], function()
 {
