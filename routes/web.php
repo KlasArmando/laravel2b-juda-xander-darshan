@@ -12,6 +12,7 @@
 */
 
 Route::resource('anime', 'AnimeController');
+Route::resource('category','CategoryController');
 
 //Route::get('/', function () {
 //    return view('home');
@@ -43,4 +44,6 @@ Route::group(['middleware' => ['auth']], function()
     Route::resource('roles', 'RoleController');
     Route::resource('users', 'UserController');
     Route::resource('manga', 'MangaController');
+    Route::resource('anime', 'AnimeController');
+    Route::resource('category','CategoryController');
 });
