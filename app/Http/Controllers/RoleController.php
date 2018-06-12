@@ -73,7 +73,9 @@ class RoleController extends Controller
         $role = new Role;
         $role->name = request('name');
         $role->save();
-        $role->syncPermissions(request('permissions'));
+        if (!empty(request('permissions'))){
+            $role->syncPermissions(request('permissions'));
+        }
 
         return redirect()->route('role.index')
                          ->with('success','Role created successfully');
@@ -126,7 +128,11 @@ class RoleController extends Controller
 
         $role->name = request('name');
         $role->save();
-        $role->syncPermissions(request('permissions'));
+        if (!empty(request('permissions'))){
+            $role->syncPermissions(request('permissions'));
+        }else{
+            $role->syncPermissions();
+        }
 
         return redirect()->route('role.index')
                          ->with('success','Role updated successfully');

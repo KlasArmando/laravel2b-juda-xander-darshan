@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Products</h2>
+                <h2>Manga</h2>
             </div>
             <div class="pull-right">
                 @can('manga-create')
@@ -26,8 +26,8 @@
     <table class="table table-bordered">
         <tr>
             <th>No</th>
-            <th>Name</th>
-            <th>Details</th>
+            <th>Title</th>
+            <th>Description</th>
             <th width="280px">Action</th>
         </tr>
 	    @foreach ($manga as $m)
@@ -36,7 +36,9 @@
 	        <td>{{ $m->title }}</td>
 	        <td>{{ $m->description }}</td>
 	        <td>
-                <form action="#">
+                <form action="manga/archive/{{$m->id}}" method="post">
+                    @csrf
+                    {{ method_field('PATCH') }}
                     <a class="btn btn-info" href="{{ route('manga.show',$m->id) }}">Show</a>
 
                     @can('manga-edit')
