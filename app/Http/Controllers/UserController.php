@@ -10,6 +10,14 @@ use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
 {
+    function __construct()
+    {
+        $this->middleware('permission:user-list');
+        $this->middleware('permission:user-create', ['only' => ['create','store']]);
+        $this->middleware('permission:user-edit', ['only' => ['edit','update']]);
+        $this->middleware('permission:user-delete', ['only' => ['destroy']]);
+    }
+
     public function index()
     {
         $user2 = Auth::user();
@@ -85,7 +93,7 @@ class UserController extends Controller
             ->with('success','User updated successfully');
     }
 
-    public function delete(User $user){
+    public function destroy(User $user){
         $user->delete();
         return redirect('users')->with('success','User deleted successfully');
     }
