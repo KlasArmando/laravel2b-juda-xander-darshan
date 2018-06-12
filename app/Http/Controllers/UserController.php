@@ -93,7 +93,7 @@ class UserController extends Controller
             ->with('success','User updated successfully');
     }
 
-    public function delete(User $user){
+    public function destroy(User $user){
         $user->delete();
         return redirect('users')->with('success','User deleted successfully');
     }
