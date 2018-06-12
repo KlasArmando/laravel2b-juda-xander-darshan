@@ -12,6 +12,8 @@
 */
 
 Route::resource('anime', 'AnimeController');
+
+Route::resource('category','CategoryController');
 Route::resource('/admin-panel/users', 'UserController')->names([
     'index' => 'user.index',
     'create' => 'user.create',
@@ -21,6 +23,7 @@ Route::resource('/admin-panel/users', 'UserController')->names([
     'destroy' => 'user.delete',
     'show' => 'user.show'
 ]);
+
 
 //Route::get('/', function () {
 //    return view('home');
@@ -47,4 +50,6 @@ Route::group(['middleware' => ['auth']], function()
     Route::resource('roles', 'RoleController');
     Route::resource('users', 'UserController');
     Route::resource('manga', 'MangaController');
+    Route::resource('anime', 'AnimeController');
+    Route::resource('category','CategoryController');
 });
