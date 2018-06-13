@@ -23,7 +23,7 @@ Route::resource('/admin-panel/users', 'UserController')->names([
     'destroy' => 'user.delete',
     'show' => 'user.show'
 ]);
-
+Route::post('/admin-panel/users/search','UserController@search')->name('user.search');
 
 //Route::get('/', function () {
 //    return view('home');
