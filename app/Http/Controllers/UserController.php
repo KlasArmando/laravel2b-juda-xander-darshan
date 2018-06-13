@@ -97,4 +97,9 @@ class UserController extends Controller
         $user->delete();
         return redirect('users')->with('success','User deleted successfully');
     }
+
+    public function search(){
+        $users = User::where('name', 'LIKE', '%' . request('name') . '%')->get();
+        return view('user.index', compact('users'));
+    }
 }
