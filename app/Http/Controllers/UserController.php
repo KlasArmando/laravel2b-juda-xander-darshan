@@ -80,12 +80,14 @@ class UserController extends Controller
         $validatedData = request()->validate([
             'name' => 'required|string|max:255|unique:users,name,'.$user->id,
             'email' => 'required|string|email|max:255|unique:users,email,'.$user->id,
-            'password' => 'required|string|min:6',
+            'password' => 'string|min:6|nullable',
         ]);
 
         $user->name = request('name');
         $user->email = request('email');
-        $user->password = Hash::make(request('password'));
+        if(!empty(request('password'))){
+            $user->password = Hash::make(request('password'));
+        }
         $user->save();
         $roles = request('roles') ? request('roles') : [];
         $user->syncRoles($roles);
