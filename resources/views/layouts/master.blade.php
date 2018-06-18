@@ -10,4 +10,10 @@
     <div class="main">
         @yield('content')
     </div>
+    <div class="footer">
+        <div class="footer-child">
+            <a href="https://github.com/KlasArmando/laravel2b-juda-xander-darshan.git">Github</a>
+        </div>
+    </div>
+</div>
 </body>
