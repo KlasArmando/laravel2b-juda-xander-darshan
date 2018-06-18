@@ -147,3 +147,18 @@ td,th {
 .footer-child {
   align-self: center;
 }
+
+.basic-bar {
+  border-style: solid;
+  border-radius: 25px;
+  border-color: $primary-yellow;
+  background: $primary-red;
+  padding: 15px;
+  color: $primary-yellow;
+}
+.pagination a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}

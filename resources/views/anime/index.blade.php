@@ -1,4 +1,5 @@
 @extends('layouts.master')
+
 @section('content')
     <script src="{{asset('js/confirm.js')}}"></script>
     <form action="{{route('anime.search')}}", method="POST">
@@ -25,8 +26,8 @@
         </div>
     @endif
 
-
-    <table class="table table-bordered">
+<div class="basic-bar">
+    <table>
         <tr>
             <th>Title</th>
             <th>Description</th>
@@ -54,9 +55,9 @@
             </tr>
         @endforeach
     </table>
-
-
+</div>
+<div class="pagination">
     {!! $anime->links() !!}
-
+</div>
 
 @endsection

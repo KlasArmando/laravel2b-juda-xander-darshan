@@ -3,20 +3,20 @@
     <div class="home-main">
         <div class="anime">
             <!--anime stuff goes here-->
-            text
+            Placeholder for anime
         </div>
         <div class="manga">
             <!--manga stuff goes here-->
-            text
+            Placerholder for manga
         </div>
         <div class="latest">
             <!--latest stuff goes here-->
-            text
+            Placeholder for latest anime / manga added
         </div>
         @can('anime-list')
             <div class="list">
                 <!--own list stuff goes here-->
-                text2
+                Placeholder for your own user page preview
             </div>
         @endcan
     </div>

@@ -29,11 +29,6 @@ Route::post('/admin-panel/anime/search', 'AnimeController@search')->name('anime.
 
 Route::post('/admin-panel/users/search','UserController@search')->name('user.search');
 Route::post('/manga/search','MangaController@search')->name('manga.search');
-
-//Route::get('/', function () {
-//    return view('home');
-//});
-
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
@@ -50,6 +45,8 @@ Route::patch('/admin-panel/roles/{role}', 'RoleController@update')->name('role.u
 Route::delete('/admin-panel/roles/{role}', 'RoleController@destroy')->name('role.delete');
 Route::patch('/manga/archive/{manga}', 'MangaController@archive')->name('manga.archived');
 Route::patch('/anime/archive/{anime}', 'AnimeController@archive')->name('anime.archived');
+Route::patch('/admin-panel/mangas/reuse/{manga}', 'MangaController@reuse')->name('manga.reuse');
+Route::patch('/admin-panel/anime/reuse/{anime}', 'AnimeController@reuse')->name('anime.reuse');
 
 
 Route::group(['middleware' => ['auth']], function()

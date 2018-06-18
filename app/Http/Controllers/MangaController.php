@@ -128,6 +128,14 @@ class MangaController extends Controller
                          ->with('success','Manga archived successfully');
     }
 
+    public function reuse(Manga $manga)
+    {
+        $manga->is_archived = 0;
+        $manga->save();
+        return redirect()->route('manga.index')
+                         ->with('success','Manga re-used successfully');
+    }
+
     public function archivedIndex()
     {
         $manga = Manga::where('is_archived',1)->latest()->paginate(5);
