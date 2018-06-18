@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Manga;
 
 class MangaTableSeeder extends Seeder
 {
@@ -18,5 +19,6 @@ class MangaTableSeeder extends Seeder
             'description' => 'TestDescription',
             'published' => '2000-01-01'
         ]);
+        $manga = factory(Manga::class, 50)->create();
     }
 }

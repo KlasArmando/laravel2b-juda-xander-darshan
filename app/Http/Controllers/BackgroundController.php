@@ -14,7 +14,8 @@ class BackgroundController extends Controller
      */
     public function index()
     {
-        //
+        $backgrounds = Background::all();
+        return view('background.index',compact('backgrounds'));
     }
 
     /**
@@ -24,7 +25,7 @@ class BackgroundController extends Controller
      */
     public function create()
     {
-        //
+        return view('background.create');
     }
 
     /**
@@ -35,7 +36,15 @@ class BackgroundController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = request()->validate([
+            'name' => 'required|unique:backgrounds',
+            'color' => 'required',
+        ]);
+
+        Background::create($request->all());
+
+        return redirect()->route('background.index')
+                        ->with('success','Background created successfully.');
     }
 
     /**
@@ -46,7 +55,7 @@ class BackgroundController extends Controller
      */
     public function show(Background $background)
     {
-        //
+        return view('background.show',compact('background'));
     }
 
     /**
@@ -57,7 +66,7 @@ class BackgroundController extends Controller
      */
     public function edit(Background $background)
     {
-        //
+        return view('background.edit',compact('background'));
     }
 
     /**
@@ -69,7 +78,15 @@ class BackgroundController extends Controller
      */
     public function update(Request $request, Background $background)
     {
-        //
+        $validatedData = request()->validate([
+            'name' => 'required|unique:backgrounds,name,'.$background->id,
+            'color' => 'required',
+        ]);
+
+        $background->update($request->all());
+
+        return redirect()->route('background.index')
+                        ->with('success','Background updated successfully');
     }
 
     /**
@@ -80,6 +97,9 @@ class BackgroundController extends Controller
      */
     public function destroy(Background $background)
     {
-        //
+        $background->delete();
+
+        return redirect()->route('background.index')
+                        ->with('success','Background deleted successfully');
     }
 }

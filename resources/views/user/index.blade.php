@@ -1,5 +1,9 @@
 @extends('layouts.admin.adminMaster')
 @section('content')
+    <form action="{{route('user.search')}}", method="POST">
+        @csrf
+        <input name="name" placeholder="search">
+    </form>
     @can('user-create')
         <form action="{{route('user.create')}}">
             <input type="submit" value="Create" class="go-right">

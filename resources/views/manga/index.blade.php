@@ -1,7 +1,10 @@
 @extends('layouts.app')
-
-
 @section('content')
+<script src="{{asset('js/confirm.js')}}"></script>
+<form action="{{route('manga.search')}}", method="POST">
+    @csrf
+    <input name="title" placeholder="search">
+</form>
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
@@ -25,18 +28,16 @@
 
     <table class="table table-bordered">
         <tr>
-            <th>No</th>
             <th>Title</th>
             <th>Description</th>
             <th width="280px">Action</th>
         </tr>
 	    @foreach ($manga as $m)
 	    <tr>
-	        <td>{{ ++$i }}</td>
 	        <td>{{ $m->title }}</td>
 	        <td>{{ $m->description }}</td>
 	        <td>
-                <form action="manga/archive/{{$m->id}}" method="post">
+                <form action="manga/archive/{{$m->id}}" method="post" onsubmit="return confirmDelete()">
                     @csrf
                     {{ method_field('PATCH') }}
                     <a class="btn btn-info" href="{{ route('manga.show',$m->id) }}">Show</a>
