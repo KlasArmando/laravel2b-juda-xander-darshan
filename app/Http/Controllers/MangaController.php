@@ -116,7 +116,7 @@ class MangaController extends Controller
         $manga->delete();
 
 
-        return redirect()->route('manga.archived')
+        return redirect()->route('manga.archivedIndex')
                         ->with('success','Manga deleted successfully');
     }
 
