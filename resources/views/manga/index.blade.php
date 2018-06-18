@@ -56,7 +56,7 @@
     </table>
 </div>
 <div class="pagination">
-    {!! $manga->links() !!}
+    {!! $manga->links('pagination') !!}
 </div>
 
 @endsection

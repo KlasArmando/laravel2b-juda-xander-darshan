@@ -57,7 +57,7 @@
     </table>
 </div>
 <div class="pagination">
-    {!! $anime->links() !!}
+    {{ $anime->links('pagination') }}
 </div>
 
 @endsection
