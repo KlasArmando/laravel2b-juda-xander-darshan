@@ -38,7 +38,7 @@
                 <td>{{ $a->title }}</td>
                 <td>{{ $a->description }}</td>
                 <td>
-                    <form action="anime/archive/{{$a->id}}" method="post" onsubmit="return confirmArchive()">
+                    <form action="/anime/archive/{{$a->id}}" method="post" onsubmit="return confirmArchive()">
                         @csrf
                         {{ method_field('PATCH') }}
                         <a class="btn btn-info" href="{{ route('anime.show',$a->id) }}">Show</a>
