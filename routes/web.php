@@ -12,7 +12,7 @@
 */
 
 Route::resource('anime', 'AnimeController');
-
+Route::resource('background', 'BackgroundController');
 Route::resource('category','CategoryController');
 Route::resource('/admin-panel/users', 'UserController')->names([
     'index' => 'user.index',
@@ -24,6 +24,7 @@ Route::resource('/admin-panel/users', 'UserController')->names([
     'show' => 'user.show'
 ]);
 Route::post('/admin-panel/users/search','UserController@search')->name('user.search');
+Route::post('/manga/search','MangaController@search')->name('manga.search');
 
 //Route::get('/', function () {
 //    return view('home');
