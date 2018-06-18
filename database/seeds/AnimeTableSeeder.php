@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Anime;
 
 class AnimeTableSeeder extends Seeder
 {
@@ -12,10 +13,11 @@ class AnimeTableSeeder extends Seeder
     public function run()
     {
         DB::table('animes') -> insert ([
-            'title' => 'Bleach',
-            'episodes' => 366,
-            'description' => 'BANKAI',
+            'title' => 'Test anime',
+            'episodes' => 24,
+            'description' => 'Test',
             'aired' => '2001/05/12',
         ]);
+        $anime = factory(Anime::class, 50)->create();
     }
 }
