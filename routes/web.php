@@ -23,14 +23,12 @@ Route::resource('/admin-panel/users', 'UserController')->names([
     'destroy' => 'user.delete',
     'show' => 'user.show'
 ]);
-<<<<<<< HEAD
+
 
 Route::post('/admin-panel/anime/search', 'AnimeController@search')->name('anime.search');
 
-=======
 Route::post('/admin-panel/users/search','UserController@search')->name('user.search');
 Route::post('/manga/search','MangaController@search')->name('manga.search');
->>>>>>> 6dbf518d026b7200c84f14655039ab780ce3d470
 
 //Route::get('/', function () {
 //    return view('home');
