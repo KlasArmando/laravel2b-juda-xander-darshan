@@ -12,7 +12,7 @@
 */
 
 Route::resource('anime', 'AnimeController');
-
+Route::resource('background', 'BackgroundController');
 Route::resource('category','CategoryController');
 Route::resource('/admin-panel/users', 'UserController')->names([
     'index' => 'user.index',

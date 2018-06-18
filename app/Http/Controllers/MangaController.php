@@ -52,9 +52,7 @@ class MangaController extends Controller
             'published' => 'required',
         ]);
 
-
         Manga::create($request->all());
-
 
         return redirect()->route('manga.index')
                         ->with('success','Manga created successfully.');

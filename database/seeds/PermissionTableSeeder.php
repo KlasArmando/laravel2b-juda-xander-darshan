@@ -40,7 +40,11 @@ class PermissionTableSeeder extends Seeder
             'user-show',
             'user-create',
             'user-edit',
-            'user-delete'
+            'user-delete',
+            'background-create',
+            'background-show',
+            'background-edit',
+            'background-delete'
         ];
 
         foreach($permissions as $permission)
