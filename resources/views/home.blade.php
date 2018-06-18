@@ -14,15 +14,10 @@
             Placeholder for latest anime / manga added
         </div>
         @can('anime-list')
-            <div class="list">
-                <!--own list stuff goes here-->
-                Placeholder for your own user page preview
-            </div>
+        <div class="list">
+            <!--own list stuff goes here-->
+            Placeholder for your own user page preview
+        </div>
         @endcan
     </div>
 @endsection
-<!--
-    - possible anime/manga reccomendations?
-    - latest anime/manga added?
-    - your list preview?
--->
