@@ -48,6 +48,11 @@
   background-color: #CB4335;
 }
 
+.admin-pagination .active {
+  background-color: #45a049;
+  color: white;
+}
+
 .admin-pagination {
   display: inline-block;
   background-color: #ABB2B9;
@@ -62,11 +67,11 @@
 
 .admin-pagination a.active {
   background-color: #ABB2B9;
-  color: #CB4335;
+  color: #45a049;
 }
 
 .admin-pagination a:hover:not(.active) {
-  background-color: #CB4335;
+  background-color: #45a049;
 }
 
 .admin-pagination ul {
@@ -90,7 +95,7 @@
 }
 
 .admin-pagination li a:hover {
-  background-color: #CB4335;
+  background-color: #45a049;
 }
 
 /*# sourceMappingURL=public/css/pagination.css.map */
