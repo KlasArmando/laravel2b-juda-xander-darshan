@@ -53,3 +53,7 @@ Route::group(['middleware' => ['auth']], function()
     Route::resource('anime', 'AnimeController');
     Route::resource('category','CategoryController');
 });
+
+Route::get('/user/{user}', function (\App\User $user) {
+    return view('user.show',compact('user'));
+});
