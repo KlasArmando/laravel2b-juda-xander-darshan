@@ -2,7 +2,7 @@
 
 @section('content')
     <script src="{{asset('js/confirm.js')}}"></script>
-    <form action="{{route('anime.search')}}", method="POST">
+    <form action="{{route('anime.search')}}" method="POST">
         @csrf
         <input name="title" placeholder="search">
     </form>
@@ -38,7 +38,7 @@
                 <td>{{ $a->title }}</td>
                 <td>{{ $a->description }}</td>
                 <td>
-                    <form action="anime/archive/{{$a->id}}" method="post" onsubmit="return confirmDelete()">
+                    <form action="anime/archive/{{$a->id}}" method="post" onsubmit="return confirmArchive()">
                         @csrf
                         {{ method_field('PATCH') }}
                         <a class="btn btn-info" href="{{ route('anime.show',$a->id) }}">Show</a>

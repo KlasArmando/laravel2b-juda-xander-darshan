@@ -1,10 +1,10 @@
 @extends('layouts.master')
 @section('content')
-<script src="{{asset('js/confirm.js')}}"></script>
-<form action="{{route('manga.search')}}", method="POST">
-    @csrf
-    <input name="title" placeholder="search">
-</form>
+    <script src="{{asset('js/confirm.js')}}"></script>
+    <form action="{{route('manga.search')}}" method="POST">
+        @csrf
+        <input name="title" placeholder="search">
+    </form>
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
@@ -37,7 +37,7 @@
 	        <td>{{ $m->title }}</td>
 	        <td>{{ $m->description }}</td>
 	        <td>
-                <form action="manga/archive/{{$m->id}}" method="post" onsubmit="return confirmDelete()">
+                <form action="manga/archive/{{$m->id}}" method="post" onsubmit="return confirmArchive()">
                     @csrf
                     {{ method_field('PATCH') }}
                     <a class="btn btn-info" href="{{ route('manga.show',$m->id) }}">Show</a>
