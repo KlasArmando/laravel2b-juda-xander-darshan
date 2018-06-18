@@ -80,6 +80,7 @@ class AnimeController extends Controller
     public function edit(Anime $anime)
     {
         return view('anime.edit',compact('anime'));
+
     }
 
     /**
