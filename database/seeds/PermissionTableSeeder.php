@@ -31,6 +31,8 @@ class PermissionTableSeeder extends Seeder
             'anime-create',
             'anime-edit',
             'anime-delete',
+            'anime-archive',
+            'anime-reuse',
             'category-list',
             'category-show',
             'category-create',
@@ -40,7 +42,11 @@ class PermissionTableSeeder extends Seeder
             'user-show',
             'user-create',
             'user-edit',
-            'user-delete'
+            'user-delete',
+            'background-create',
+            'background-show',
+            'background-edit',
+            'background-delete'
         ];
 
         foreach($permissions as $permission)

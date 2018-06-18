@@ -1,5 +1,4 @@
-@extends('layouts.app')
-
+@extends('layouts.master')
 
 @section('content')
     <div class="row">
@@ -35,25 +34,25 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Title:</strong>
-                    <input type="text" name="title" id='title' class="form-control" placeholder="Title">
+                    <input type="text" name="title" id='title' value="{{$anime->title}}" class="form-control" placeholder="Title">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Episodes:</strong>
-                    <input type="text" name="episodes" id='episodes' class="form-control" placeholder="Episodes">
+                    <input type="text" name="episodes" id='episodes' value="{{$anime->episodes}}" class="form-control" placeholder="Episodes">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Description:</strong>
-                    <textarea class="form-control" style="height:150px" name="description" id='description' placeholder="Description"></textarea>
+                    <textarea class="form-control" style="height:150px" name="description" id='description' placeholder="Description">{{$anime->description}}</textarea>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Aired:</strong>
-                    <input type="date" name="aired" id='aired' class="form-control" placeholder="Aired">
+                    <input type="date" name="aired" id='aired' value="{{$anime->aired}}" class="form-control" placeholder="Aired">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">

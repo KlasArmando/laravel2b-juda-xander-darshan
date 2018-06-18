@@ -1,5 +1,9 @@
 @extends('layouts.admin.adminMaster')
 @section('content')
+    <form action="{{route('user.search')}}", method="POST">
+        @csrf
+        <input name="name" placeholder="search">
+    </form>
     @can('user-create')
         <form action="{{route('user.create')}}">
             <input type="submit" value="Create" class="go-right">
@@ -26,6 +30,13 @@
                         <span class="role">{{$role}}</span>
                     @endforeach
                 </td>
+                @can('user-show')
+                    <td>
+                        <form action="{{route('user.show', $user->id)}}">
+                            <input type="submit" value="Show">
+                        </form>
+                    </td>
+                @endcan
                 @can('user-edit')
                     <td>
                         <form action="{{route('user.edit', $user->id)}}">
@@ -45,4 +56,7 @@
             </tr>
         @endforeach
     </table>
+    <div class="admin-pagination">
+        {!! $users->links('pagination') !!}
+    </div>
 @endsection

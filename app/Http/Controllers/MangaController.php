@@ -21,9 +21,9 @@ class MangaController extends Controller
      */
     public function index()
     {
-        $manga = Manga::where('is_archived',0)->latest()->paginate(5);
+        $manga = Manga::where('is_archived',0)->latest()->paginate(10);
         return view('manga.index',compact('manga'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+            ->with('i', (request()->input('page', 1) - 1) * 10);
     }
 
     /**
@@ -52,9 +52,7 @@ class MangaController extends Controller
             'published' => 'required',
         ]);
 
-
         Manga::create($request->all());
-
 
         return redirect()->route('manga.index')
                         ->with('success','Manga created successfully.');
@@ -118,7 +116,7 @@ class MangaController extends Controller
         $manga->delete();
 
 
-        return redirect()->route('manga.archived')
+        return redirect()->route('manga.archivedIndex')
                         ->with('success','Manga deleted successfully');
     }
 
@@ -130,10 +128,24 @@ class MangaController extends Controller
                          ->with('success','Manga archived successfully');
     }
 
+    public function reuse(Manga $manga)
+    {
+        $manga->is_archived = 0;
+        $manga->save();
+        return redirect()->route('manga.index')
+                         ->with('success','Manga re-used successfully');
+    }
+
     public function archivedIndex()
     {
         $manga = Manga::where('is_archived',1)->latest()->paginate(5);
         return view('manga.archived',compact('manga'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
+    }
+
+    public function search(){
+        $manga = Manga::where('title', 'LIKE', '%' . request('title') . '%')->paginate(10);
+        return view('manga.index', compact('manga'))
+            ->with('i', (request()->input('page', 1) - 1) * 10);
     }
 }
