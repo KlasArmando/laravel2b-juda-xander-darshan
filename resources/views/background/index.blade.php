@@ -1,3 +1,5 @@
+@extends('layouts.master')
+@section('content')
 <head>
 	<script src="{{asset('js/confirm.js')}}"></script>
 </head>
@@ -39,3 +41,4 @@
 		</tr>
 	@endforeach
 </table>
+@endsection
