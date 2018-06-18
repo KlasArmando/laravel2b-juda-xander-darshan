@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" href="{{asset('css/pagination.css')}}">
 @if ($paginator->lastPage() > 1)
 <ul class="pagination">
     <li class="{{ ($paginator->currentPage() == 1) ? ' disabled' : '' }}">

@@ -1,0 +1,94 @@
+$primary-red: #CB4335;
+$primary-yellow: #F4D03F;
+$primary-grey: #ABB2B9;
+
+.active {
+  background-color: $primary-yellow;
+  color: white;
+}
+
+.pagination {
+    display: inline-block;
+    background-color: $primary-red;
+}
+
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.pagination a.active {
+    background-color: $primary-red;
+    color: $primary-yellow;
+}
+
+.pagination a:hover:not(.active) {background-color: $primary-yellow;}
+
+.pagination ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: $primary-red;
+}
+
+.pagination li {
+    float: left;
+}
+
+.pagination li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+.pagination li a:hover {
+    background-color: $primary-red;
+}
+
+.admin-pagination {
+    display: inline-block;
+    background-color: $primary-grey;
+}
+
+.admin-pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.admin-pagination a.active {
+    background-color: $primary-grey;
+    color: $primary-red;
+}
+
+.admin-pagination a:hover:not(.active) {background-color: $primary-red;}
+
+.admin-pagination ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: $primary-grey;
+}
+
+.admin-pagination li {
+    float: left;
+}
+
+.admin-pagination li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+.admin-pagination li a:hover {
+    background-color: $primary-red;
+}
