@@ -157,4 +157,22 @@ td, th {
   align-self: center;
 }
 
+.basic-bar {
+  border-style: solid;
+  border-radius: 25px;
+  border-color: #F4D03F;
+  background: #CB4335;
+  padding: 15px;
+  color: #F4D03F;
+}
+
+.pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+}
+
 /*# sourceMappingURL=public/css/home.css.map */

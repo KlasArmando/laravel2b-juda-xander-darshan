@@ -129,6 +129,14 @@ class AnimeController extends Controller
             ->with('success','Anime archived successfully');
     }
 
+    public function reuse(Anime $anime)
+    {
+        $anime->is_archived = 0;
+        $anime->save();
+        return redirect()->route('anime.index')
+                         ->with('success','Anime re-used successfully');
+    }
+
     public function archivedIndex()
     {
         $anime = Anime::where('is_archived',1)->latest()->paginate(5);

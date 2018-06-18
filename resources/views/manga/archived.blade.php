@@ -25,7 +25,9 @@
                 @endcan
                 @can('manga-reuse')
                     <td>
-                        <form action="#">
+                        <form action="{{route('manga.reuse', $m->id)}}" method="post" onsubmit="return confirmReUse()">
+                            @csrf
+                            {{ method_field('PATCH') }}
                             <input type="submit" value="ReUse">
                         </form>
                     </td>
