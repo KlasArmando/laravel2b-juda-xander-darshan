@@ -2,6 +2,12 @@
 
 
 @section('content')
+
+    <form action="{{route('anime.search')}}" method="POST">
+        @csrf
+        <input name="title" placeholder="search">
+    </form>
+
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
@@ -25,14 +31,13 @@
 
     <table class="table table-bordered">
         <tr>
-            <th>No</th>
             <th>Name</th>
             <th>Details</th>
             <th width="280px">Action</th>
         </tr>
         @foreach ($anime as $a)
+            @if($a->is_archived !== 1)
             <tr>
-                <td>{{ ++$i }}</td>
                 <td>{{ $a->title }}</td>
                 <td>{{ $a->description }}</td>
                 <td>
@@ -51,11 +56,10 @@
                     </form>
                 </td>
             </tr>
+            @endif
         @endforeach
     </table>
 
-
-    {!! $anime->links() !!}
 
 
 @endsection

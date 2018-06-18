@@ -31,6 +31,7 @@ class PermissionTableSeeder extends Seeder
             'anime-create',
             'anime-edit',
             'anime-delete',
+            'anime-archive',
             'category-list',
             'category-show',
             'category-create',

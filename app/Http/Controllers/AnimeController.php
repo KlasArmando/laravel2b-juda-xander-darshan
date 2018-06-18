@@ -23,7 +23,8 @@ class AnimeController extends Controller
     {
         $anime = Anime::latest()->paginate(5);
         return view('anime.index',compact('anime'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+        ->with('i', (request()->input('page', 1) - 1) * 5);
+
     }
 
     /**
@@ -116,7 +117,7 @@ class AnimeController extends Controller
         $anime->delete();
 
 
-        return redirect()->route('anime.archived')
+        return redirect()->route('anime.archivedIndex')
             ->with('success','Anime deleted successfully');
     }
 
@@ -133,5 +134,11 @@ class AnimeController extends Controller
         $anime = Anime::where('is_archived',1)->latest()->paginate(5);
         return view('anime.archived',compact('anime'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
+
+    }
+
+    public function search(){
+        $anime = Anime::where('title', 'LIKE', '%' . request('title') . '%')->get();
+        return view('anime.index', compact('anime'));
     }
 }

@@ -18,7 +18,7 @@
                 <td>{{$a->title}}</td>
                 @can('anime-edit')
                     <td>
-                        <form action="{{route('manga.edit', $a->id)}}">
+                        <form action="{{route('anime.edit', $a->id)}}">
                             <input type="submit" value="Edit">
                         </form>
                     </td>

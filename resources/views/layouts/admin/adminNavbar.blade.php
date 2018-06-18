@@ -12,6 +12,9 @@
          <a href="{{route('manga.archivedIndex')}}">📄 - Archived Manga</a>
      </li>
      <li>
+         <a href="{{route('anime.archivedIndex')}}">📄 - Archived Anime</a>
+     </li>
+     <li>
          <a href="{{route('category.index')}}">📄 - Categories</a>
      </li>
  </ul>
