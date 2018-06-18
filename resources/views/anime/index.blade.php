@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('content')
     <script src="{{asset('js/confirm.js')}}"></script>
-    <form action="{{route('anime.search')}}", method="POST">
+    <form action="{{route('anime.search')}}" method="POST">
         @csrf
         <input name="title" placeholder="search">
     </form>
