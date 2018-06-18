@@ -1,5 +1,4 @@
 @extends('layouts.master')
-
 @section('content')
 <h2>{{ $background->name }} Background</h2>
 <strong>Name:</strong> {{ $background->name }} <br>

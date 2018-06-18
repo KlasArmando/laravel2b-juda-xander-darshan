@@ -1,5 +1,4 @@
 @extends('layouts.master')
-
 @section('content')
 <h1>Edit Background</h1>
 <form action="{{route('background.update', $background)}}" method="POST" class="form">

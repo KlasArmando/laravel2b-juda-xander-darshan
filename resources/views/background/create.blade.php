@@ -1,5 +1,4 @@
 @extends('layouts.master')
-
 @section('content')
 <h1>Create Background</h1>
     <form action="{{route('background.store')}}" method="POST" class="form">

@@ -1,6 +1,4 @@
 @extends('layouts.master')
-
-
 @section('content')
     <script src="{{asset('js/confirm.js')}}"></script>
     <form action="{{route('anime.search')}}", method="POST">
