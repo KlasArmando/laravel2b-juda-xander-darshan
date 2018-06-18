@@ -1,0 +1,31 @@
+$font: "Comic Sans MS", cursive, sans-serif;
+$primary-red: #CB4335;
+$primary-yellow: #F4D03F;
+$primary-grey: #ABB2B9;
+
+.grid-contrainer {
+  display: grid;
+  grid-template-areas:
+          'menu main main main main main'
+          'menu main main main main main'
+          'menu main main main main main';
+  width: 100%;
+  margin-top: 5px;
+  grid-gap: 10px;
+}
+
+.basic-bar {
+  border-style: solid;
+  border-radius: 25px;
+  border-color: $primary-yellow;
+  background: $primary-red;
+  padding: 15px;
+}
+
+.side-bar {
+  grid-area: menu;
+
+}
+.main-bar {
+  grid-area: main;
+}

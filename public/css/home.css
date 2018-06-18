@@ -65,7 +65,7 @@ body {
     text-align: left;
   }
 }
-.main {
+.home-main {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
