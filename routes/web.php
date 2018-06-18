@@ -61,6 +61,11 @@ Route::group(['middleware' => ['auth']], function()
     Route::resource('category','CategoryController');
 });
 
-Route::get('/user/{user}', function (\App\User $user) {
-    return view('user.show',compact('user'));
-});
+Route::get('users/{user}', function (\App\User $user) {
+    return view('user.userShow',compact('user'));
+})->name('user.publicShow');
+
+Route::get('users', function () {
+    $users = \App\User::all();
+    return view('user.userIndex',compact('users'));
+})->name('user.publicIndex');

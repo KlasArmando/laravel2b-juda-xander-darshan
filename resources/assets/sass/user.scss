@@ -20,6 +20,7 @@ $primary-grey: #ABB2B9;
   border-color: $primary-yellow;
   background: $primary-red;
   padding: 15px;
+  color: $primary-yellow;
 }
 
 .side-bar {
@@ -28,4 +29,18 @@ $primary-grey: #ABB2B9;
 }
 .main-bar {
   grid-area: main;
+}
+
+.margin-top {
+  margin-top: 5px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
 }
