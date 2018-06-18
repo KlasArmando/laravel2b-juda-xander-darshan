@@ -2,6 +2,12 @@
 
 
 @section('content')
+
+    <form action="{{route('anime.search')}}" method="POST">
+        @csrf
+        <input name="title" placeholder="search">
+    </form>
+
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
@@ -25,37 +31,35 @@
 
     <table class="table table-bordered">
         <tr>
-            <th>No</th>
             <th>Name</th>
             <th>Details</th>
             <th width="280px">Action</th>
         </tr>
         @foreach ($anime as $a)
+            @if($a->is_archived !== 1)
             <tr>
-                <td>{{ ++$i }}</td>
                 <td>{{ $a->title }}</td>
                 <td>{{ $a->description }}</td>
                 <td>
-                    <form action="{{ route('anime.destroy', $a->id) }}" method="POST">
+                    <form action="anime/archive/{{$a->id}}" method="post">
+                        @csrf
+                        {{ method_field('PATCH') }}
                         <a class="btn btn-info" href="{{ route('anime.show',$a->id) }}">Show</a>
 
                         @can('anime-edit')
                             <a class="btn btn-primary" href="{{ route('anime.edit',$a->id) }}">Edit</a>
                         @endcan
 
-                        @can('anime-delete')
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger">Delete</button>
+                        @can('anime-archive')
+                            <button type="submit" class="btn btn-danger">Archive</button>
                         @endcan
                     </form>
                 </td>
             </tr>
+            @endif
         @endforeach
     </table>
 
-
-    {!! $anime->links() !!}
 
 
 @endsection

@@ -18,6 +18,7 @@ class CreateAnimesTable extends Migration
             $table->string('title');
             $table->integer('episodes');
             $table->longText('description');
+            $table->boolean('is_archived')->default(false);
             $table->date('aired');
             $table->timestamps();
         });
