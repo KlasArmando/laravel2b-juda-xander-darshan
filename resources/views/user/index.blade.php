@@ -56,4 +56,7 @@
             </tr>
         @endforeach
     </table>
+    <div class="admin-pagination">
+        {!! $users->links('pagination') !!}
+    </div>
 @endsection

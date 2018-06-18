@@ -144,8 +144,8 @@ class MangaController extends Controller
     }
 
     public function search(){
-        $manga = Manga::where('title', 'LIKE', '%' . request('title') . '%')->paginate(5);
+        $manga = Manga::where('title', 'LIKE', '%' . request('title') . '%')->paginate(10);
         return view('manga.index', compact('manga'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+            ->with('i', (request()->input('page', 1) - 1) * 10);
     }
 }

@@ -147,8 +147,8 @@ class AnimeController extends Controller
     }
 
     public function search(){
-        $anime = Anime::where('title', 'LIKE', '%' . request('title') . '%')->paginate(5);
+        $anime = Anime::where('title', 'LIKE', '%' . request('title') . '%')->paginate(10);
         return view('anime.index', compact('anime'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+            ->with('i', (request()->input('page', 1) - 1) * 10);
     }
 }

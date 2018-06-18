@@ -22,8 +22,9 @@ class UserController extends Controller
     {
         $user2 = Auth::user();
         if ($user2->hasPermissionTo('user-list')){
-            $users = User::all();
-            return view('user.index', compact('users'));
+            $users = User::paginate(10);
+            return view('user.index', compact('users'))
+                ->with('i', (request()->input('page', 1) - 1) * 10);
         }else{
             abort(404);
         }
@@ -101,7 +102,8 @@ class UserController extends Controller
     }
 
     public function search(){
-        $users = User::where('name', 'LIKE', '%' . request('name') . '%')->get();
-        return view('user.index', compact('users'));
+        $users = User::where('name', 'LIKE', '%' . request('name') . '%')->paginate(10);
+        return view('user.index', compact('users'))
+            ->with('i', (request()->input('page', 1) - 1) * 10);
     }
 }
