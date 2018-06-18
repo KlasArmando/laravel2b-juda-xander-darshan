@@ -1,6 +1,7 @@
-<head>
-	<script src="{{asset('js/confirm.js')}}"></script>
-</head>
+@extends('layouts.master')
+
+@section('content')
+<script src="{{asset('js/confirm.js')}}"></script>
 @can('background-create')
 	<form action="{{route('background.create')}}">
 		<input type="submit" value="Create" class="go-right">
@@ -39,3 +40,4 @@
 		</tr>
 	@endforeach
 </table>
+@endsection
