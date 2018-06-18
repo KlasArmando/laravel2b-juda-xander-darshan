@@ -21,9 +21,9 @@ class MangaController extends Controller
      */
     public function index()
     {
-        $manga = Manga::where('is_archived',0)->latest()->paginate(5);
+        $manga = Manga::where('is_archived',0)->latest()->paginate(10);
         return view('manga.index',compact('manga'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+            ->with('i', (request()->input('page', 1) - 1) * 10);
     }
 
     /**

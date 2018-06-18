@@ -168,6 +168,7 @@ td, th {
 
 .pagination {
   display: inline-block;
+  background-color: #CB4335;
 }
 
 .pagination a {
@@ -178,12 +179,36 @@ td, th {
 }
 
 .pagination a.active {
-  background-color: #4CAF50;
-  color: white;
+  background-color: #CB4335;
+  color: #F4D03F;
 }
 
 .pagination a:hover:not(.active) {
-  background-color: #ddd;
+  background-color: #F4D03F;
+}
+
+.pagination ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #CB4335;
+}
+
+.pagination li {
+  float: left;
+}
+
+.pagination li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+}
+
+.pagination li a:hover {
+  background-color: #F4D03F;
 }
 
 /*# sourceMappingURL=public/css/home.css.map */
