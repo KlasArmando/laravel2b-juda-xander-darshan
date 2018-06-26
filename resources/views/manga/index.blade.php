@@ -37,7 +37,11 @@
 	        <td>{{ $m->title }}</td>
 	        <td>{{ $m->description }}</td>
 	        <td>
+                @if(empty($search))
                 <form action="manga/archive/{{$m->id}}" method="post" onsubmit="return confirmArchive()">
+                @else
+                <form action="archive/{{$m->id}}" method="post" onsubmit="return confirmArchive()">
+                @endif
                     @csrf
                     {{ method_field('PATCH') }}
                     <a class="btn btn-info" href="{{ route('manga.show',$m->id) }}">Show</a>

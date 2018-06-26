@@ -148,7 +148,8 @@ class AnimeController extends Controller
 
     public function search(){
         $anime = Anime::where('title', 'LIKE', '%' . request('title') . '%')->where('is_archived',0)->paginate(10);
-        return view('anime.index', compact('anime'))
+        $search = true;
+        return view('anime.index', compact('anime', 'search'))
             ->with('i', (request()->input('page', 1) - 1) * 10);
     }
 }

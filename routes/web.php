@@ -25,7 +25,7 @@ Route::resource('/admin-panel/users', 'UserController')->names([
 ]);
 
 
-Route::post('/admin-panel/anime/search', 'AnimeController@search')->name('anime.search');
+Route::post('/anime/search', 'AnimeController@search')->name('anime.search');
 
 Route::post('/admin-panel/users/search','UserController@search')->name('user.search');
 Route::post('/manga/search','MangaController@search')->name('manga.search');
